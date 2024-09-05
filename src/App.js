@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import UserProfile from './UserProfile';
 
-function App() {
+const App = () => {
+    const users = [
+        {id: 1 , name: "Hakeem" , age : 21 , location: "Hyderabad"},
+        {id : 2 , name: "Adnan" , age : 22 , location: "Hyderabad"}
+    ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>User profiles!</h1>
+      <div>
+        {users.map((user) => (
+            <UserProfile key = {user.id} name = {user.name} location = {user.location} />
+        ))}
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
