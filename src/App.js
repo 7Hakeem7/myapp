@@ -1,5 +1,6 @@
 import React from 'react'
 import UserProfile from './UserProfile';
+import AutoIncrementCounter from './AutoIncrementCounter';
 
 const App = () => {
     const users = [
@@ -15,6 +16,9 @@ const App = () => {
             <UserProfile key = {user.id} name = {user.name} location = {user.location} />
         ))}
       </div>
+      <br/>
+      <br/>
+      <AutoIncrementCounter/>
     </div>
   )
 }
